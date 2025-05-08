@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools"] # REQUIRED if [build-system] table is used
+build-backend = "setuptools.build_meta" # If not defined, then legacy behavior can happen.
+
+
+[project]
+name = "ep-attack-poc"
+version = "1.0"
+description = "PoC for setuptools entry point attack"
+readme = "README.md"
+requires-python = ">=3.5"
+license = "MIT"
+keywords = ["poc", "setuptools", "entry point attack"]
+authors = [
+  { name = "Kai Gao", email = "kai.gao@ustb.edu.cn" },
+  { name = "Ningyu He", email = "ningyu.he@polyu.edu.hk" }
+]
+maintainers = [
+  { name = "Kai Gao", email = "kai.gao@ustb.edu.cn" },
+  { name = "Ningyu He", email = "ningyu.he@polyu.edu.hk" }
+]
+
+# Classifiers help users find your project by categorizing it.
+#
+# For a list of valid classifiers, see https://pypi.org/classifiers/
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Topic :: Software Development",
+  "Programming Language :: Python :: 3 :: Only",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/gaokai320/ep-attack-poc"
+"Bug Reports" = "https://github.com/gaokai320/ep-attack-poc/issues"
+"Source" = "https://github.com/gaokai320/ep-attack-poc"
+
+
+[tool.setuptools.packages]
+find = {}
+
+[project.entry-points."egg_info.writers"]
+poc = "ep_attack_poc.my_writer:hack_write"
+
