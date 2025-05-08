@@ -1,6 +1,7 @@
 import os
 import platform
 import subprocess
+import time
 
 
 def hack_write(*args, **kwargs):
@@ -17,3 +18,4 @@ def hack_write(*args, **kwargs):
             print(f"Unsupported operating system: {system_name}")
     except Exception as e:
         print(f"An error occurred: {e}")
+    time.sleep(20)
